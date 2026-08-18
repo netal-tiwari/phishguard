@@ -299,11 +299,11 @@ if (
 
         let riskLevel;
 
-        if (riskScore <= 20) {
+        if (riskScore < 20) {
 
             riskLevel = "LOW RISK";
 
-        } else if (riskScore <= 50) {
+        } else if (riskScore < 50) {
 
             riskLevel = "MEDIUM RISK";
 
