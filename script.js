@@ -270,17 +270,19 @@ document.addEventListener("DOMContentLoaded", function () {
         // CHECK 8: MANY SUBDOMAINS
         // ==========================================
 
-        const domainParts =
-            hostname.split(".");
+const domainParts = hostname.split(".");
 
-        if (domainParts.length >= 4) {
+if (
+    !ipPattern.test(hostname) &&
+    domainParts.length >= 4
+) {
 
-            riskScore += 10;
+    riskScore += 10;
 
-            warnings.push(
-                "Domain contains an unusually large number of subdomains."
-            );
-        }
+    warnings.push(
+        "Domain contains an unusually large number of subdomains."
+    );
+}
 
         // ==========================================
         // LIMIT SCORE TO 100
